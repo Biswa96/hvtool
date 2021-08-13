@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <Windows.h>
 #include <stdio.h>
-#include "hcn.h"
-#include "hcs.h"
+#include <computecore.h>
+#include <computenetwork.h>
 #include "helper.h"
 #include "hvtool.h"
 #include "jsmn.h"
@@ -15,7 +15,7 @@ HRESULT WINAPI ContainerUtility(PWSTR VmId, enum HVTOOL_CONTAINER_OPERATIONS Ope
     HCS_SYSTEM hcsSystem = NULL;
 
     hcsOperation = HcsCreateOperation(NULL, NULL);
-    hRes = HcsOpenComputeSystem(VmId, DEFAULT_REQUESTED_ACCESS, &hcsSystem);
+    hRes = HcsOpenComputeSystem(VmId, GENERIC_ALL, &hcsSystem);
     if (hRes == 0)
     {
         switch (Operation)

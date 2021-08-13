@@ -39,7 +39,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>ole32.lib;shell32.lib;$(SolutionDir)lib\computecore.lib;$(SolutionDir)lib\computenetwork.lib</AdditionalDependencies>
+      <AdditionalDependencies>ole32.lib;shell32.lib;computecore.lib;computenetwork.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -48,8 +48,6 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hcn.h" />
-    <ClInclude Include="hcs.h" />
     <ClInclude Include="helper.h" />
     <ClInclude Include="hvtool.h" />
     <ClInclude Include="jsmn.h" />

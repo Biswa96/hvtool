@@ -3,7 +3,7 @@
 NAME = hvtool
 BINDIR = ../bin
 CFLAGS = -std=c99 -Os -m64 -Wall -Wextra
-LIBS = -lole32 -lshell32 -lcomputecore -lcomputenetwork -L"../lib"
+LIBS = -lole32 -lshell32 -lcomputecore -lcomputenetwork
 SOURCES = $(wildcard *.c)
 OBJECTS = $(SOURCES:.c=.obj)
 BINS = $(patsubst %.obj,$(BINDIR)/%.obj,$(OBJECTS))

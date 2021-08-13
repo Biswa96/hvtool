@@ -1,4 +1,4 @@
-#include <Windows.h>
+#include <windows.h>
 #include <stdio.h>
 
 #define FORMAT_FLAGS ( FORMAT_MESSAGE_ALLOCATE_BUFFER |\
