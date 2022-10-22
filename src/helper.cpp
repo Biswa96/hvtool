@@ -5,7 +5,7 @@
                        FORMAT_MESSAGE_FROM_SYSTEM     |\
                        FORMAT_MESSAGE_IGNORE_INSERTS  )
 
-void WINAPI Log(HRESULT Result, PWSTR Function)
+void WINAPI Log(HRESULT Result, PCWSTR Function)
 {
     if (Result == 0)
         return;

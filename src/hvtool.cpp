@@ -92,7 +92,7 @@ HRESULT WINAPI ListEndpoints(void)
 
     if (hRes == 0)
     {
-        hRes = HcnOpenEndpoint(&Id, &hcnEndpoint, NULL);
+        hRes = HcnOpenEndpoint(Id, &hcnEndpoint, NULL);
         hRes = HcnQueryEndpointProperties(hcnEndpoint, NULL, &Properties, NULL);
         wprintf(L"%ls\n", Properties);
     }
@@ -123,7 +123,7 @@ HRESULT WINAPI ListNetworks(void)
 
     if (hRes == 0)
     {
-        hRes = HcnOpenNetwork(&Id, &hcnNetwork, NULL);
+        hRes = HcnOpenNetwork(Id, &hcnNetwork, NULL);
         hRes = HcnQueryNetworkProperties(hcnNetwork, NULL, &Properties, NULL);
         wprintf(L"%ls\n", Properties);
     }
@@ -158,7 +158,7 @@ HRESULT WINAPI GetWslIP(BOOLEAN Verbose)
         0x412B,
         { 0xB5, 0x71, 0x18, 0xA8, 0x1A, 0x16, 0xE0, 0x05 } };
 
-    hRes = HcnOpenNetwork(&wslNetworkId, &hcnNetwork, NULL);
+    hRes = HcnOpenNetwork(wslNetworkId, &hcnNetwork, NULL);
     hRes = HcnQueryNetworkProperties(hcnNetwork, NULL, &Properties, NULL);
     if (Verbose)
     {
