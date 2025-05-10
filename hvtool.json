@@ -1,0 +1,69 @@
+{
+    "Owner": "HVTOOL",
+    "SchemaVersion": {
+        "Major": 2,
+        "Minor": 3
+    },
+    "ShouldTerminateOnLastHandleClosed": true,
+    "VirtualMachine": {
+        "Chipset": {
+            "LinuxKernelDirect": {
+                "InitRdPath": "",
+                "KernelCmdLine": "initrd=\\initrd.img panic=-1 nr_cpus=2 earlycon=uart8250,io,0x3f8,115200 console=hvc0 debug pty.legacy_count=0",
+                "KernelFilePath": ""
+            },
+            "UseUtc": true
+        },
+        "ComputeTopology": {
+            "Memory": {
+                "AllowOvercommit": true,
+                "EnableColdDiscardHint": true,
+                "EnableDeferredCommit": true,
+                "SizeInMB": 2048
+            },
+            "Processor": {
+                "Count": 2
+            }
+        },
+        "Devices": {
+            "Battery": {},
+            // bi-directional pipes connect with /dev/ttyS{0...7}
+            "ComPorts": {
+                "0": {
+                    "NamedPipe": "\\\\.\\pipe\\hvtool_com_port0"
+                },
+                "1": {
+                    "NamedPipe": "\\\\.\\pipe\\hvtool_com_port1"
+                }
+            },
+            "HvSocket": {
+                "HvSocketConfig": {
+                    "DefaultBindSecurityDescriptor": "",
+                    "DefaultConnectSecurityDescriptor": ""
+                }
+            },
+            "Plan9": {},
+            "Scsi": {
+                "0": {
+                    "Attachments": {}
+                }
+            },
+            "VirtioSerial": {
+                // bi-directional pipes connect with /dev/hvc{0...7}
+                "Ports": {
+                    "0": {
+                        "ConsoleSupport": true,
+                        "Name": "hvc0",
+                        "NamedPipe": "\\\\.\\pipe\\hvtool_serial_port0"
+                    },
+                    "1": {
+                        "ConsoleSupport": true,
+                        "Name": "hvc1",
+                        "NamedPipe": "\\\\.\\pipe\\hvtool_serial_port1"
+                    }
+                }
+            }
+        },
+        "StopOnReset": true
+    }
+}
