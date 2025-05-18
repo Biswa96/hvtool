@@ -45,7 +45,16 @@
             "Plan9": {},
             "Scsi": {
                 "0": {
-                    "Attachments": {}
+                    "Attachments": {
+                        "0": {
+                            "AlwaysAllowSparseFiles": true,
+                            "Path": "",
+                            "ReadOnly": true,
+                            "SupportCompressedVolumes": true,
+                            "SupportEncryptedFiles": true,
+                            "Type": "VirtualDisk"
+                        }
+                    }
                 }
             },
             "VirtioSerial": {
